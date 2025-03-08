@@ -1,0 +1,1019 @@
+2025-03-05 22:30:12,089 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:30:12,108 - discord.client - INFO - logging in using static token
+2025-03-05 22:30:13,142 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7fc2b49ab22fd28dd593f6d9f1a66f7e).
+2025-03-05 22:30:15,157 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:30:15,157 - CourtBot - INFO - Initializing database...
+2025-03-05 22:30:15,170 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:30:15,797 - CourtBot - INFO - Synced 27 command(s)
+2025-03-05 22:30:22,139 - discord - INFO - Help viewed by byggmesterpro
+2025-03-05 22:33:56,216 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:33:56,223 - discord.client - INFO - logging in using static token
+2025-03-05 22:33:57,192 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 97ba39ff25b2f9f1b6a77092a3f88b84).
+2025-03-05 22:33:59,196 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:33:59,197 - CourtBot - INFO - Initializing database...
+2025-03-05 22:33:59,200 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:34:00,873 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:34:32,689 - CourtBot.Setup - INFO - Setup completed for guild Tingrett V2 (ID: 1346940621906251776)
+2025-03-05 22:34:50,496 - CourtBot.Setup - INFO - Judge byggmesterpro (ID: 257073333273624576) set up with quarters 'Larssen'
+2025-03-05 22:35:11,713 - discord.app_commands.tree - ERROR - Ignoring exception in command 'statistikk'
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\information.py", line 181, in statistics
+    c.execute('''
+    ~~~~~~~~~^^^^
+    SELECT
+    ^^^^^^
+    ...<5 lines>...
+    FROM cases
+    ^^^^^^^^^^
+    ''')
+    ^^^^
+sqlite3.OperationalError: no such table: cases
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'statistikk' raised an exception: OperationalError: no such table: cases
+2025-03-05 22:36:34,032 - CourtBot.Tickets - INFO - Ticket button created in åpne-ticket by byggmesterpro
+2025-03-05 22:36:40,545 - CourtBot.Tickets - INFO - New case #1 created by byggmesterpro in category Saker
+2025-03-05 22:38:27,107 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:38:27,115 - discord.client - INFO - logging in using static token
+2025-03-05 22:38:28,008 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 967bc22f2eb2c287b3cd6f003911e6aa).
+2025-03-05 22:38:30,010 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:38:30,011 - CourtBot - INFO - Initializing database...
+2025-03-05 22:38:30,012 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:38:30,311 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:38:38,573 - discord.app_commands.tree - ERROR - Ignoring exception in command 'avslutt-sak'
+Traceback (most recent call last):
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\tickets.py", line 396, in close_case_with_reason
+    file = discord.File(
+        fp=html_content.encode('utf-8'),
+        filename=file_name
+    )
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\file.py", line 97, in __init__
+    self.fp = open(fp, 'rb')
+              ~~~~^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: b'\n            <!DOCTYPE html>\n            <html>\n            <head>\n                <meta charset="UTF-8">\n                <title>Sak #1 - \xc3\x85pne sak i tingretten</title>\n                <style>\n                    body { font-family: Arial, sans-serif; margin: 20px; background-color: #f9f9f9; color: #333; }\n                    .header { background-color: #f2f2f2; padding: 20px; border-radius: 5px; margin-bottom: 20px; border: 1px solid #ddd; }\n                    .evidence { background-color: #e6f7ff; padding: 15px; border-radius: 5px; margin-bottom: 15px; border: 1px solid #b8e2f2; }\n                    .messages { border: 1px solid #ddd; border-radius: 5px; overflow: hidden; }\n                    .message { padding: 15px; border-bottom: 1px solid #eee; display: flex; }\n                    .message:nth-child(odd) { background-color: #f9f9f9; }\n                    .message:nth-child(even) { background-color: #fff; }\n                    .message-avatar { width: 40px; height: 40px; border-radius: 50%; margin-right: 15px; }\n                    .message-content { flex: 1; }\n                    .message-header { display: flex; justify-content: space-between; margin-bottom: 5px; }\n                    .message-author { font-weight: bold; }\n                    .message-timestamp { color: #777; font-size: 12px; }\n                    .message-text { margin-bottom: 10px; }\n                    .attachment { background-color: #f0f0f0; padding: 8px; margin-top: 5px; border-radius: 3px; display: inline-block; }\n                    .embed { background-color: #f0f0f0; padding: 10px; margin-top: 10px; border-radius: 5px; border-left: 4px solid #7289da; }\n                    .embed-title { font-weight: bold; margin-bottom: 5px; }\n                    .embed-description { margin-bottom: 10px; }\n                    .embed-field { margin-top: 5px; }\n                    .embed-field-name { font-weight: bold; }\n                    h1, h2 { color: #2c3e50; }\n                    a { color: #3498db; text-decoration: none; }\n                    a:hover { text-decoration: underline; }\n                </style>\n            </head>\n            <body>\n                <div class="header">\n                    <h1>Sak #1 - \xc3\x85pne sak i tingretten</h1>\n                    <p><strong>Beskrivelse:</strong> \xc3\x98nsker du \xc3\xa5 komme i kontakt med dommer? Da kan du kontakte oss her, med \xc3\xa5 trykke p\xc3\xa5 den gr\xc3\xb8nne knappen "Kontakt oss."!</p>\n                    <p><strong>Status:</strong> \xc3\x85pen</p>\n                    <p><strong>Opprettet:</strong> 2025-03-05 21:36:40</p>\n                    <p><strong>Tildelt dommer:</strong> Ingen</p>\n                    <p><strong>Eksportert:</strong> 2025-03-05 22:38:38</p>\n                </div>\n                \n                <h2>Bevis</h2>\n            <p>Ingen bevis registrert for denne saken.</p>\n                <h2>Meldinger</h2>\n                <div class="messages">\n            \n                <div class="message">\n                    <img class="message-avatar" src="https://cdn.discordapp.com/avatars/775425904213491742/ec705e1ac6fecd2ed5d3b8d0c604c47e.png?size=1024" alt="Ting Systemet">\n                    <div class="message-content">\n                        <div class="message-header">\n                            <span class="message-author">Ting Systemet</span>\n                            <span class="message-timestamp">2025-03-05 21:38:35</span>\n                        </div>\n                        <div class="message-text">Avslutter sak...<br>- Eksporterer til HTML...</div>\n                        \n                \n                    </div>\n                </div>\n                \n                </div>\n                <div style="margin-top: 20px; text-align: center; color: #777; font-size: 12px;">\n                    Generert av CourtBot\n                </div>\n            </body>\n            </html>\n            '
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\tickets.py", line 422, in close_case_with_reason
+    await progress_msg.edit(content=f"Feil under arkivering: {e}")
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 865, in edit
+    return await self._state._webhook.edit_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 2035, in edit_message
+    data = await adapter.edit_webhook_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<10 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\webhook\async_.py", line 226, in request
+    raise HTTPException(response, data)
+discord.errors.HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In content: Must be 2000 or fewer in length.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'avslutt-sak' raised an exception: HTTPException: 400 Bad Request (error code: 50035): Invalid Form Body
+In content: Must be 2000 or fewer in length.
+2025-03-05 22:41:32,354 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:41:32,365 - discord.client - INFO - logging in using static token
+2025-03-05 22:41:33,321 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2f201ab7b9e283432d3ff4e70fb05f7d).
+2025-03-05 22:41:35,331 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:41:35,331 - CourtBot - INFO - Initializing database...
+2025-03-05 22:41:35,332 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:41:35,743 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:41:44,279 - CourtBot.Tickets - INFO - Case 1 closed with reason 'Ferdig' by byggmesterpro
+2025-03-05 22:44:31,825 - CourtBot.Tickets - INFO - Case 1 closed with reason 'ferdig' by byggmesterpro
+2025-03-05 22:44:49,226 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:44:49,235 - discord.client - INFO - logging in using static token
+2025-03-05 22:44:50,236 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 1c559ff750a227944b3f4eb6eda7f690).
+2025-03-05 22:44:52,242 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:44:52,242 - CourtBot - INFO - Initializing database...
+2025-03-05 22:44:52,243 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:44:52,591 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:44:59,602 - CourtBot.Tickets - INFO - Case 1 closed with reason 'Ferdig' by byggmesterpro
+2025-03-05 22:45:08,224 - CourtBot.Tickets - INFO - Channel tingrett-v2-1 deleted by byggmesterpro
+2025-03-05 22:47:45,884 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:47:45,894 - discord.client - INFO - logging in using static token
+2025-03-05 22:47:46,849 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: a7bf7ad1cc45c0ed6581e05fb1d354d0).
+2025-03-05 22:47:48,856 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:47:48,856 - CourtBot - INFO - Initializing database...
+2025-03-05 22:47:48,857 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:47:49,143 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:48:24,064 - CourtBot.Tickets - INFO - Ticket button created in åpne-ticket by byggmesterpro
+2025-03-05 22:52:01,510 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:52:01,520 - discord.client - INFO - logging in using static token
+2025-03-05 22:52:02,486 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9246dc38029cb1bbf71cd519b0312721).
+2025-03-05 22:52:04,539 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:52:04,539 - CourtBot - INFO - Initializing database...
+2025-03-05 22:52:04,540 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:52:04,863 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:52:34,518 - CourtBot.Tickets - INFO - Ticket button created in åpne-ticket by byggmesterpro
+2025-03-05 22:54:50,057 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:54:50,067 - discord.client - INFO - logging in using static token
+2025-03-05 22:54:51,067 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 860544542778809ecc6cd0e2d5d6ccf4).
+2025-03-05 22:54:53,073 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:54:53,073 - CourtBot - INFO - Initializing database...
+2025-03-05 22:54:53,074 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:54:53,433 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:55:20,871 - CourtBot.Tickets - INFO - Creating ticket button with custom_id: ticket_button:1346959084338941952
+2025-03-05 22:55:21,370 - CourtBot.Tickets - INFO - Ticket button created in åpne-ticket by byggmesterpro
+2025-03-05 22:55:23,090 - CourtBot.Tickets - INFO - Received interaction with custom_id: ticket_button:1346959084338941952
+2025-03-05 22:55:23,090 - CourtBot.Tickets - INFO - Processing ticket button interaction: ticket_button:1346959084338941952
+2025-03-05 22:58:32,033 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:58:32,042 - discord.client - INFO - logging in using static token
+2025-03-05 22:58:33,143 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 0fb61832e0ca3990939200fbd35ec35f).
+2025-03-05 22:58:35,168 - CourtBot - INFO - Bot is logged in as Ting Systemet#4207
+2025-03-05 22:58:35,168 - CourtBot - INFO - Initializing database...
+2025-03-05 22:58:35,169 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:58:35,475 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 22:58:54,801 - CourtBot.Tickets - INFO - Creating ticket button with custom_id: ticket_button:1346959084338941952
+2025-03-05 22:58:55,435 - CourtBot.Tickets - INFO - Ticket button created in åpne-ticket by byggmesterpro
+2025-03-05 22:58:58,650 - CourtBot - INFO - Global handler processing ticket button: ticket_button:1346959084338941952
+2025-03-05 22:58:58,650 - CourtBot - ERROR - Error extracting category_id from ticket_button:1346959084338941952: invalid literal for int() with base 10: 'button:1346959084338941952'
+2025-03-05 22:59:32,396 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 22:59:32,405 - discord.client - INFO - logging in using static token
+2025-03-05 22:59:33,287 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: eceb95ad94c4b019f73be684e6197279).
+2025-03-05 22:59:35,299 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 22:59:35,299 - CourtBot - INFO - Initializing database...
+2025-03-05 22:59:35,300 - CourtBot - INFO - Database initialized successfully
+2025-03-05 22:59:35,581 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 23:00:02,505 - CourtBot.Tickets - INFO - Ticket button created in åpne-ticket by byggmesterpro
+2025-03-05 23:00:05,792 - CourtBot.Tickets - INFO - New case #2 created by byggmesterpro in category Saker
+2025-03-05 23:00:24,811 - CourtBot.Evidence - INFO - Evidence #2.1 added to case 2 by byggmesterpro
+2025-03-05 23:00:45,688 - CourtBot.Tickets - INFO - Case 2 closed with reason 'Ferdig' by byggmesterpro
+2025-03-05 23:04:32,329 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 23:04:32,334 - discord.client - INFO - logging in using static token
+2025-03-05 23:04:33,207 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2865e312681cc9278a06521243ad129b).
+2025-03-05 23:04:35,211 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 23:04:35,211 - CourtBot - INFO - Initializing database...
+2025-03-05 23:04:35,212 - CourtBot - INFO - Database initialized successfully
+2025-03-05 23:04:35,499 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 23:09:03,247 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 23:09:03,254 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-05 23:09:03,257 - discord.client - INFO - logging in using static token
+2025-03-05 23:09:04,180 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 4dd33d75f30306d6bca4ffabecb8c68b).
+2025-03-05 23:09:06,193 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 23:09:06,193 - CourtBot - INFO - Initializing database...
+2025-03-05 23:09:06,194 - CourtBot - INFO - Database initialized successfully
+2025-03-05 23:09:06,540 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 23:09:35,486 - discord.app_commands.tree - ERROR - Ignoring exception in command 'ticket'
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\tickets.py", line 285, in create_ticket
+    c.execute('''
+    ~~~~~~~~~^^^^
+    UPDATE categories
+    ^^^^^^^^^^^^^^^^^
+    SET title = ?, description = ?, emoji = ?, button_text = ?, role_id = ?
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    WHERE category_id = ?
+    ^^^^^^^^^^^^^^^^^^^^^
+    ''', (title, description, button_emoji, button_text, role_id, category.id))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: title
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'ticket' raised an exception: OperationalError: no such column: title
+2025-03-05 23:10:05,398 - discord.app_commands.tree - ERROR - Ignoring exception in command 'ticket'
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\tickets.py", line 285, in create_ticket
+    c.execute('''
+    ~~~~~~~~~^^^^
+    UPDATE categories
+    ^^^^^^^^^^^^^^^^^
+    SET title = ?, description = ?, emoji = ?, button_text = ?, role_id = ?
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    WHERE category_id = ?
+    ^^^^^^^^^^^^^^^^^^^^^
+    ''', (title, description, button_emoji, button_text, role_id, category.id))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: title
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'ticket' raised an exception: OperationalError: no such column: title
+2025-03-05 23:12:00,263 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 23:12:00,271 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-05 23:12:00,273 - discord.client - INFO - logging in using static token
+2025-03-05 23:12:01,265 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5d44af7bc84e5cdc742cbc9055b760f7).
+2025-03-05 23:12:03,292 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 23:12:03,292 - CourtBot - INFO - Initializing database...
+2025-03-05 23:12:03,293 - CourtBot - INFO - Database initialized successfully
+2025-03-05 23:12:03,820 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 23:12:07,452 - CourtBot.Tickets - INFO - Ticket panel created by byggmesterpro in åpne-ticket
+2025-03-05 23:12:13,714 - CourtBot.Tickets - INFO - Ticket created by byggmesterpro in category Saker
+2025-03-05 23:12:19,024 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-05 23:12:19,029 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-05 23:12:19,032 - discord.client - INFO - logging in using static token
+2025-03-05 23:12:19,945 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 2774f6c9da552ab22ceca769ff5769b8).
+2025-03-05 23:12:21,948 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-05 23:12:21,948 - CourtBot - INFO - Initializing database...
+2025-03-05 23:12:21,949 - CourtBot - INFO - Database initialized successfully
+2025-03-05 23:12:27,167 - CourtBot.Tickets - INFO - Ticket created by byggmesterpro in category Saker
+2025-03-05 23:12:49,551 - discord - INFO - Help viewed by byggmesterpro
+2025-03-05 23:13:03,788 - CourtBot - INFO - Synced 29 command(s)
+2025-03-05 23:13:52,410 - CourtBot.Tickets - INFO - Case 4 closed with reason 'Ferdig test' by byggmesterpro
+2025-03-05 23:14:01,204 - CourtBot.Tickets - INFO - Channel byggmesterpro-4 deleted by byggmesterpro
+2025-03-05 23:14:11,803 - CourtBot.Tickets - INFO - Channel byggmesterpro-2 deleted by byggmesterpro
+2025-03-05 23:14:12,293 - CourtBot.Judge - INFO - Case 3 claimed by judge byggmesterpro
+2025-03-05 23:15:00,246 - CourtBot.Judge - INFO - DM sent to byggmesterpro by judge byggmesterpro
+2025-03-05 23:15:18,598 - CourtBot.Tickets - INFO - Case 3 archived by byggmesterpro
+2025-03-05 23:15:27,900 - discord.app_commands.tree - ERROR - Ignoring exception in command 'statistikk'
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\information.py", line 181, in statistics
+    c.execute('''
+    ~~~~~~~~~^^^^
+    SELECT
+    ^^^^^^
+    ...<5 lines>...
+    FROM cases
+    ^^^^^^^^^^
+    ''')
+    ^^^^
+sqlite3.OperationalError: no such table: cases
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'statistikk' raised an exception: OperationalError: no such table: cases
+2025-03-05 23:15:32,115 - discord - INFO - Help viewed by byggmesterpro
+2025-03-05 23:16:04,608 - CourtBot.Notifications - INFO - Notification #1 scheduled for byggmesterpro by byggmesterpro
+2025-03-05 23:21:44,213 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 00:51:31,540 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 02:22:02,980 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 03:25:22,494 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 04:52:48,971 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 07:58:14,586 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 09:15:16,721 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 12:35:07,905 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 13:04:13,462 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 13:20:49,578 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 13:44:32,314 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 14:22:14,427 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 15:10:58,618 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 2774f6c9da552ab22ceca769ff5769b8.
+2025-03-06 20:59:53,199 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-06 20:59:53,203 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-06 20:59:53,206 - discord.client - INFO - logging in using static token
+2025-03-06 20:59:54,525 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 8fa81e4a17578cbb4ac08709a6bfebb0).
+2025-03-06 20:59:56,538 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-06 20:59:56,538 - CourtBot - INFO - Initializing database...
+2025-03-06 20:59:56,539 - CourtBot - INFO - Database initialized successfully
+2025-03-06 20:59:56,946 - CourtBot - INFO - Synced 29 command(s)
+2025-03-06 21:00:02,128 - CourtBot.Tickets - INFO - Ticket created by byggmesterpro in category Saker
+2025-03-06 21:00:22,055 - CourtBot.Judge - INFO - Case 5 claimed by judge byggmesterpro
+2025-03-06 21:19:49,452 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 8fa81e4a17578cbb4ac08709a6bfebb0.
+2025-03-06 22:33:30,696 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 8fa81e4a17578cbb4ac08709a6bfebb0.
+2025-03-06 22:35:10,561 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 8fa81e4a17578cbb4ac08709a6bfebb0.
+2025-03-06 23:09:33,753 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 8fa81e4a17578cbb4ac08709a6bfebb0.
+2025-03-07 18:49:32,636 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 18:49:32,640 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 18:49:32,645 - discord.client - INFO - logging in using static token
+2025-03-07 18:49:33,802 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 171ebe8327c1b1fb378f621ac6c175a3).
+2025-03-07 18:49:35,811 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 18:49:35,811 - CourtBot - INFO - Initializing database...
+2025-03-07 18:49:35,812 - CourtBot - INFO - Database initialized successfully
+2025-03-07 18:49:36,216 - CourtBot - INFO - Synced 30 command(s)
+2025-03-07 18:50:07,066 - CourtBot.Judge - INFO - DM sent to byggmesterpro by judge byggmesterpro
+2025-03-07 18:54:44,188 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 18:54:44,192 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 18:54:44,196 - discord.client - INFO - logging in using static token
+2025-03-07 18:54:45,184 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ea006fc0fb0f53172f976caa0553d7ab).
+2025-03-07 18:54:47,199 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 18:54:47,199 - CourtBot - INFO - Initializing database...
+2025-03-07 18:54:47,200 - CourtBot - INFO - Database initialized successfully
+2025-03-07 18:54:47,470 - CourtBot - INFO - Synced 30 command(s)
+2025-03-07 18:57:08,881 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 18:57:08,885 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:00:39,466 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:00:39,470 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:00:39,475 - CourtBot - INFO - Syncing commands with Discord...
+2025-03-07 19:01:24,602 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:01:24,606 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:01:24,609 - discord.client - INFO - logging in using static token
+2025-03-07 19:01:25,594 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 278eba26cc790da274c288f7101d9159).
+2025-03-07 19:01:27,596 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:01:27,597 - CourtBot - INFO - Initializing database...
+2025-03-07 19:01:27,598 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:01:27,598 - CourtBot - INFO - Syncing commands with Discord...
+2025-03-07 19:01:28,087 - CourtBot - INFO - Commands synced successfully!
+2025-03-07 19:01:44,383 - discord.app_commands.tree - ERROR - Ignoring exception in command 'send-dm'
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\judge.py", line 425, in send_dm
+    await bruker.send(embed=embed)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\abc.py", line 1591, in send
+    channel = await self._get_channel()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\member.py", line 414, in _get_channel
+    ch = await self.create_dm()
+         ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\member.py", line 194, in general
+    return await getattr(self._user, x)(*args, **kwargs)
+                 ~~~~~~~^^^^^^^^^^^^^^^
+AttributeError: 'ClientUser' object has no attribute 'create_dm'. Did you mean: 'created_at'?
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'send-dm' raised an exception: AttributeError: 'ClientUser' object has no attribute 'create_dm'
+2025-03-07 19:06:22,630 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:06:22,633 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:06:22,639 - discord.client - INFO - logging in using static token
+2025-03-07 19:06:23,976 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6f7bde131cf8c741d83b493f127c45ef).
+2025-03-07 19:06:25,980 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:06:25,980 - CourtBot - INFO - Initializing database...
+2025-03-07 19:06:25,981 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:06:26,413 - CourtBot - INFO - Synced 30 command(s)
+2025-03-07 19:07:39,355 - discord - INFO - Help viewed by byggmesterpro
+2025-03-07 19:12:11,683 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:12:11,690 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:12:11,693 - discord.client - INFO - logging in using static token
+2025-03-07 19:12:12,630 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 51c9fe4587271de80cdc129e80cf7963).
+2025-03-07 19:12:14,634 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:12:14,635 - CourtBot - INFO - Initializing database...
+2025-03-07 19:12:14,636 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:12:15,005 - CourtBot - INFO - Synced 31 command(s)
+2025-03-07 19:13:35,056 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:13:35,060 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:13:35,063 - discord.client - INFO - logging in using static token
+2025-03-07 19:13:36,190 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 553d8a719a640af7fa9e4975b51a7d8e).
+2025-03-07 19:13:38,199 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:13:38,199 - CourtBot - INFO - Initializing database...
+2025-03-07 19:13:38,200 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:13:38,405 - CourtBot - INFO - Synced 0 command(s) to debug guild
+2025-03-07 19:15:17,158 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:15:17,162 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:15:17,169 - discord.client - INFO - logging in using static token
+2025-03-07 19:15:19,246 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 5e9be3ce73ccf437b4332ca53c40d948).
+2025-03-07 19:15:21,256 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:15:21,256 - CourtBot - INFO - Initializing database...
+2025-03-07 19:15:21,257 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:15:21,605 - CourtBot - INFO - Synced 32 command(s) to debug guild 1346940621906251776
+2025-03-07 19:15:21,959 - CourtBot - INFO - Synced 32 command(s) globally
+2025-03-07 19:19:17,660 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:19:17,664 - CourtBot.Tickets - INFO - Loaded ticket views for 3 categories
+2025-03-07 19:19:17,671 - discord.client - INFO - logging in using static token
+2025-03-07 19:19:18,537 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 7b68b98fd27155bdb274c7e4c04b2959).
+2025-03-07 19:19:20,543 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:19:20,543 - CourtBot - INFO - Initializing database...
+2025-03-07 19:19:20,544 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:19:20,812 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:22:43,420 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:24:39,806 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:24:39,813 - CourtBot.Tickets - WARNING - Categories table doesn't exist yet. Skipping ticket view loading.
+2025-03-07 19:24:39,816 - discord.client - INFO - logging in using static token
+2025-03-07 19:24:40,729 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ad59055b755127df35c2e93376475dce).
+2025-03-07 19:24:42,741 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:24:42,741 - CourtBot - INFO - Initializing database...
+2025-03-07 19:24:42,761 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:24:43,234 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:24:48,798 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:24:48,805 - discord.client - INFO - logging in using static token
+2025-03-07 19:24:49,646 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 6c0e767c5cbe705f448693ab52811d2f).
+2025-03-07 19:24:51,666 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:24:51,667 - CourtBot - INFO - Initializing database...
+2025-03-07 19:24:51,668 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:25:11,441 - CourtBot.Setup - INFO - Found existing 'Arkiv' category: 1346959081109459046
+2025-03-07 19:25:11,442 - CourtBot.Setup - INFO - Found existing 'Saker' category: 1346959084338941952
+2025-03-07 19:25:11,644 - CourtBot.Setup - INFO - Setup completed for guild Tingrett V2 (ID: 1346940621906251776)
+2025-03-07 19:25:43,124 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:26:27,585 - discord.app_commands.tree - ERROR - Ignoring exception in command 'sett-dommer'
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 857, in _do_call
+    return await self._callback(self.binding, interaction, **params)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\cogs\setup.py", line 160, in set_judge
+    await bruker.add_roles(judge_role)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\member.py", line 1077, in add_roles
+    await req(guild_id, user_id, role.id, reason=reason)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 756, in request
+    raise Forbidden(response, data)
+discord.errors.Forbidden: 403 Forbidden (error code: 50013): Missing Permissions
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\tree.py", line 1310, in _call
+    await command._invoke_with_namespace(interaction, namespace)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 883, in _invoke_with_namespace
+    return await self._do_call(interaction, transformed_values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\app_commands\commands.py", line 876, in _do_call
+    raise CommandInvokeError(self, e) from e
+discord.app_commands.errors.CommandInvokeError: Command 'sett-dommer' raised an exception: Forbidden: 403 Forbidden (error code: 50013): Missing Permissions
+2025-03-07 19:26:44,956 - discord - INFO - Help viewed by byggmesterpro
+2025-03-07 19:29:01,430 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:29:01,440 - discord.client - INFO - logging in using static token
+2025-03-07 19:29:02,338 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 23f7541021c8a61b79c94612032f046b).
+2025-03-07 19:29:04,361 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:29:04,362 - CourtBot - INFO - Initializing database...
+2025-03-07 19:29:04,362 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:29:04,683 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:29:09,394 - CourtBot.Setup - INFO - Created judge category 'Larssen'
+2025-03-07 19:29:10,161 - CourtBot.Setup - INFO - Set permissions for judge category 'Larssen'
+2025-03-07 19:29:10,162 - CourtBot.Setup - INFO - Added new judge Jens Arnesen to database
+2025-03-07 19:40:19,032 - CourtBot.Setup - INFO - Found existing 'Arkiv' category: 1346959081109459046
+2025-03-07 19:40:19,032 - CourtBot.Setup - INFO - Found existing 'Saker' category: 1346959084338941952
+2025-03-07 19:40:19,235 - CourtBot.Setup - INFO - Setup completed for guild Tingrett V2 (ID: 1346940621906251776)
+2025-03-07 19:40:29,470 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:40:29,482 - discord.client - INFO - logging in using static token
+2025-03-07 19:40:30,437 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 79f1431d77298a185f3a94280c9d8565).
+2025-03-07 19:40:32,445 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:40:32,445 - CourtBot - INFO - Initializing database...
+2025-03-07 19:40:32,446 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:40:32,862 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:40:34,645 - CourtBot.Setup - INFO - Found existing 'Arkiv' category: 1346959081109459046
+2025-03-07 19:40:34,645 - CourtBot.Setup - INFO - Added existing 'Arkiv' category to database: 1346959081109459046
+2025-03-07 19:40:34,646 - CourtBot.Setup - INFO - Found existing 'Saker' category: 1346959084338941952
+2025-03-07 19:40:34,646 - CourtBot.Setup - INFO - Added existing 'Saker' category to database: 1346959084338941952
+2025-03-07 19:40:34,646 - CourtBot.Setup - INFO - Category in database after setup: Larssen (ID: 1347637205904003142)
+2025-03-07 19:40:34,646 - CourtBot.Setup - INFO - Category in database after setup: Arkiv (ID: 1346959081109459046)
+2025-03-07 19:40:34,646 - CourtBot.Setup - INFO - Category in database after setup: Saker (ID: 1346959084338941952)
+2025-03-07 19:40:34,877 - CourtBot.Setup - INFO - Setup completed for guild Tingrett V2 (ID: 1346940621906251776)
+2025-03-07 19:40:47,994 - CourtBot.Judge - INFO - Legacy channel 'gammel-sak' archived and deleted by byggmesterpro
+2025-03-07 19:43:18,891 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:43:18,906 - discord.client - INFO - logging in using static token
+2025-03-07 19:43:19,901 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: dd990538913115eae8783f35aa70681d).
+2025-03-07 19:43:21,954 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:43:21,954 - CourtBot - INFO - Initializing database...
+2025-03-07 19:43:21,955 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:43:22,236 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:48:15,420 - CourtBot.Judge - INFO - Legacy channel 'gammel' archived and deleted by byggmesterpro
+2025-03-07 19:53:06,081 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-07 19:53:06,094 - discord.client - INFO - logging in using static token
+2025-03-07 19:53:06,989 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: 9c36340b0d03b687b5aae73090e0907a).
+2025-03-07 19:53:08,991 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-07 19:53:08,992 - CourtBot - INFO - Initializing database...
+2025-03-07 19:53:08,992 - CourtBot - INFO - Database initialized successfully
+2025-03-07 19:53:09,311 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-07 19:53:32,262 - CourtBot.Judge - INFO - Legacy channel 'gammel' archived and deleted by byggmesterpro
+2025-03-07 23:20:30,516 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9c36340b0d03b687b5aae73090e0907a.
+2025-03-08 01:07:20,870 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9c36340b0d03b687b5aae73090e0907a.
+2025-03-08 04:16:08,376 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9c36340b0d03b687b5aae73090e0907a.
+2025-03-08 06:53:48,931 - discord.gateway - INFO - Shard ID None has successfully RESUMED session 9c36340b0d03b687b5aae73090e0907a.
+2025-03-08 09:04:02,442 - discord.client - ERROR - Attempting a reconnect in 1.52s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:04:04,031 - discord.client - ERROR - Attempting a reconnect in 3.63s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:04:07,676 - discord.client - ERROR - Attempting a reconnect in 7.93s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:04:15,617 - discord.client - ERROR - Attempting a reconnect in 15.30s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:04:30,930 - discord.client - ERROR - Attempting a reconnect in 10.20s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:04:41,146 - discord.client - ERROR - Attempting a reconnect in 2.30s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:04:43,453 - discord.client - ERROR - Attempting a reconnect in 70.43s
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1362, in _create_direct_connection
+    hosts = await self._resolve_host(host, port, traces=traces)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 995, in _resolve_host
+    return await asyncio.shield(resolved_host_task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1026, in _resolve_host_with_throttle
+    addrs = await self._resolver.resolve(host, port, family=self._family)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\resolver.py", line 36, in resolve
+    infos = await self._loop.getaddrinfo(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 939, in getaddrinfo
+    return await self.run_in_executor(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        None, getaddr_func, host, port, family, type, proto, flags)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\concurrent\futures\thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 701, in connect
+    self.ws = await asyncio.wait_for(coro, timeout=60.0)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\asyncio\tasks.py", line 507, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\gateway.py", line 375, in from_client
+    socket = await client.http.ws_connect(str(url))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\http.py", line 554, in ws_connect
+    return await self.__session.ws_connect(url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 1004, in _ws_connect
+    resp = await self.request(
+           ^^^^^^^^^^^^^^^^^^^
+    ...<11 lines>...
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\client.py", line 703, in _request
+    conn = await self._connector.connect(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        req, traces=traces, timeout=real_timeout
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 548, in connect
+    proto = await self._create_connection(req, traces, timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1056, in _create_connection
+    _, proto = await self._create_direct_connection(req, traces, timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiohttp\connector.py", line 1368, in _create_direct_connection
+    raise ClientConnectorDNSError(req.connection_key, exc) from exc
+aiohttp.client_exceptions.ClientConnectorDNSError: Cannot connect to host gateway-us-east1-c.discord.gg:443 ssl:default [getaddrinfo failed]
+2025-03-08 09:05:54,222 - discord.gateway - INFO - Shard ID None session has been invalidated.
+2025-03-08 09:05:59,736 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: e9ad1f637616cf8d76394c2f76aec275).
+2025-03-08 09:06:01,744 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-08 09:06:01,744 - CourtBot - INFO - Initializing database...
+2025-03-08 09:06:01,745 - CourtBot - INFO - Database initialized successfully
+2025-03-08 09:06:01,745 - discord.client - ERROR - Ignoring exception in on_ready
+Traceback (most recent call last):
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\client.py", line 481, in _run_event
+    await coro(*args, **kwargs)
+  File "C:\Users\einar\Documents\Programmering\Windsurf\Discord Bots\CourtBot\main.py", line 143, in on_ready
+    check_scheduled_notifications.start()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\einar\AppData\Local\Programs\Python\Python313\Lib\site-packages\discord\ext\tasks\__init__.py", line 400, in start
+    raise RuntimeError('Task is already launched and is not completed.')
+RuntimeError: Task is already launched and is not completed.
+2025-03-08 09:48:18,675 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 11:54:21,646 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 12:35:36,736 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 13:52:07,446 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 16:03:38,155 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 17:09:09,517 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 19:30:27,701 - discord.gateway - INFO - Shard ID None has successfully RESUMED session e9ad1f637616cf8d76394c2f76aec275.
+2025-03-08 19:47:00,796 - CourtBot.Tickets - INFO - Ticket created by byggmesterpro in category Saker
+2025-03-08 20:04:46,646 - discord - INFO - Help viewed by byggmesterpro
+2025-03-08 20:09:33,912 - CourtBot.Tickets - INFO - Case 1 closed with reason 'Ferdig behandlet' by byggmesterpro
+2025-03-08 20:09:57,463 - CourtBot.Tickets - INFO - Channel jens-arnesen-1 deleted by byggmesterpro
+2025-03-08 20:11:09,790 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-08 20:11:09,803 - discord.client - INFO - logging in using static token
+2025-03-08 20:11:10,897 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: ca3c32c7862c7f28f39d8e66cc347d60).
+2025-03-08 20:11:12,914 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-08 20:11:12,914 - CourtBot - INFO - Initializing database...
+2025-03-08 20:11:12,915 - CourtBot - INFO - Database initialized successfully
+2025-03-08 20:11:13,192 - CourtBot - INFO - Synced 31 command(s) globally
+2025-03-08 20:13:35,458 - CourtBot.Setup - INFO - Created judge category 'KebabDommer'
+2025-03-08 20:13:36,327 - CourtBot.Setup - INFO - Set permissions for judge category 'KebabDommer'
+2025-03-08 20:13:36,328 - CourtBot.Setup - INFO - Added new judge Kebab to database
