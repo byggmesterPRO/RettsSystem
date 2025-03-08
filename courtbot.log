@@ -1017,3 +1017,10 @@ RuntimeError: Task is already launched and is not completed.
 2025-03-08 20:13:35,458 - CourtBot.Setup - INFO - Created judge category 'KebabDommer'
 2025-03-08 20:13:36,327 - CourtBot.Setup - INFO - Set permissions for judge category 'KebabDommer'
 2025-03-08 20:13:36,328 - CourtBot.Setup - INFO - Added new judge Kebab to database
+2025-03-08 20:23:50,749 - discord.client - WARNING - PyNaCl is not installed, voice will NOT be supported
+2025-03-08 20:23:50,756 - discord.client - INFO - logging in using static token
+2025-03-08 20:23:51,750 - discord.gateway - INFO - Shard ID None has connected to Gateway (Session ID: aa668fc5dbc3881dee9d4688b8b8cb0a).
+2025-03-08 20:23:53,756 - CourtBot - INFO - Bot is ready! Logged in as Ting Systemet#4207 (ID: 775425904213491742)
+2025-03-08 20:23:53,756 - CourtBot - INFO - Initializing database...
+2025-03-08 20:23:53,757 - CourtBot - INFO - Database initialized successfully
+2025-03-08 20:23:54,053 - CourtBot - INFO - Synced 31 command(s) globally
