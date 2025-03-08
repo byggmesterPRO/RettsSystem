@@ -59,7 +59,7 @@ CourtBot is a Discord bot designed to create and manage a virtual court system f
 
 ### Judge Commands
 
-- `/tildel` - Claims a case and assigns it to yourself as a judge
+- `/ta-sak` - Claims a case and assigns it to yourself as a judge
 - `/send-sak` - Moves a case to a different category
 - `/send-dm` - Sends a direct message to a user through the bot
 - `/legg-til-notat` - Adds a note to the case file
