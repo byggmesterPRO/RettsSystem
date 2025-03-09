@@ -631,5 +631,250 @@ class Setup(commands.Cog):
             logger.error(f"Error syncing commands: {e}")
             await interaction.followup.send(f"En feil oppstod under synkronisering: {e}", ephemeral=True)
     
+    @app_commands.command(name="sett-arkiv-kategori", description="Setter en eksisterende kategori som arkiv-kategori")
+    @app_commands.describe(
+        kategori="Kategorien som skal settes som arkiv-kategori"
+    )
+    @app_commands.default_permissions(administrator=True)
+    async def set_archive_category(self, interaction: discord.Interaction, kategori: discord.CategoryChannel):
+        """
+        Sets an existing category as the archive category
+        
+        This command allows you to designate an existing category as the archive category,
+        which is used for storing closed and archived tickets.
+        
+        Args:
+            kategori: The category to set as the archive category
+        """
+        await interaction.response.defer(ephemeral=True)
+        
+        # Get connection to database
+        conn = self.get_db_connection()
+        c = conn.cursor()
+        
+        # Check if "Arkiv" category already exists in database
+        c.execute('''
+        SELECT * FROM categories WHERE name = 'Arkiv'
+        ''')
+        
+        existing_archive = c.fetchone()
+        
+        if existing_archive:
+            # Update existing archive category
+            c.execute('''
+            UPDATE categories
+            SET category_id = ?
+            WHERE name = 'Arkiv'
+            ''', (kategori.id,))
+            
+            logger.info(f"Updated archive category to {kategori.name} (ID: {kategori.id})")
+            action = "oppdatert"
+        else:
+            # Insert new archive category
+            c.execute('''
+            INSERT INTO categories (category_id, name, role_id)
+            VALUES (?, ?, ?)
+            ''', (kategori.id, "Arkiv", 0))
+            
+            logger.info(f"Set new archive category: {kategori.name} (ID: {kategori.id})")
+            action = "satt"
+        
+        conn.commit()
+        
+        # Set appropriate permissions for the archive category
+        try:
+            await kategori.set_permissions(interaction.guild.default_role, read_messages=False, send_messages=False)
+            logger.info(f"Set permissions for archive category {kategori.name}")
+        except discord.Forbidden:
+            await interaction.followup.send(
+                "Advarsel: Boten har ikke tillatelse til å sette rettigheter for kategorien. "
+                "Gi boten 'Administrer kanaler' tillatelse.",
+                ephemeral=True
+            )
+        except Exception as e:
+            logger.error(f"Error setting category permissions: {e}")
+            await interaction.followup.send(f"Advarsel: Kunne ikke sette rettigheter for kategorien: {e}", ephemeral=True)
+        
+        # Check if archive-log channel exists in this category
+        archive_log_exists = False
+        for channel in kategori.text_channels:
+            if channel.name == "arkiv-logg":
+                archive_log_exists = True
+                break
+        
+        # Provide feedback to user
+        if archive_log_exists:
+            await interaction.followup.send(
+                f"Arkiv-kategori er {action} til '{kategori.name}'. "
+                f"Arkiv-logg kanal finnes allerede i denne kategorien.",
+                ephemeral=True
+            )
+        else:
+            await interaction.followup.send(
+                f"Arkiv-kategori er {action} til '{kategori.name}'. "
+                f"Merk: Ingen 'arkiv-logg' kanal ble funnet i denne kategorien. "
+                f"Du kan opprette den med kommandoen `/sett-arkiv-logg`.",
+                ephemeral=True
+            )
+        
+        conn.close()
+    
+    @app_commands.command(name="sett-arkiv-logg", description="Setter en eksisterende kanal som arkiv-logg")
+    @app_commands.describe(
+        kanal="Kanalen som skal settes som arkiv-logg"
+    )
+    @app_commands.default_permissions(administrator=True)
+    async def set_archive_log(self, interaction: discord.Interaction, kanal: discord.TextChannel):
+        """
+        Sets an existing channel as the archive log channel
+        
+        This command allows you to designate an existing text channel as the archive log channel,
+        which is used for storing case exports when cases are closed.
+        
+        Args:
+            kanal: The text channel to set as the archive log channel
+        """
+        await interaction.response.defer(ephemeral=True)
+        
+        # Check if the channel name is "arkiv-logg"
+        if kanal.name != "arkiv-logg":
+            # Rename the channel
+            try:
+                await kanal.edit(name="arkiv-logg")
+                logger.info(f"Renamed channel {kanal.id} to 'arkiv-logg'")
+            except discord.Forbidden:
+                await interaction.followup.send(
+                    "Advarsel: Boten har ikke tillatelse til å endre navn på kanalen. "
+                    "Gi boten 'Administrer kanaler' tillatelse. "
+                    "Fortsetter uten å endre navn.",
+                    ephemeral=True
+                )
+            except Exception as e:
+                logger.error(f"Error renaming channel: {e}")
+                await interaction.followup.send(
+                    f"Advarsel: Kunne ikke endre navn på kanalen: {e}. "
+                    f"Fortsetter uten å endre navn.",
+                    ephemeral=True
+                )
+        
+        # Get the parent category
+        category = kanal.category
+        
+        # Get connection to database
+        conn = self.get_db_connection()
+        c = conn.cursor()
+        
+        # Check if the parent category is registered as "Arkiv"
+        if category:
+            c.execute('''
+            SELECT * FROM categories WHERE category_id = ? AND name = 'Arkiv'
+            ''', (category.id,))
+            
+            archive_category = c.fetchone()
+            
+            if not archive_category:
+                # Register the parent category as "Arkiv"
+                c.execute('''
+                SELECT * FROM categories WHERE name = 'Arkiv'
+                ''')
+                
+                existing_archive = c.fetchone()
+                
+                if existing_archive:
+                    # Update existing archive category
+                    c.execute('''
+                    UPDATE categories
+                    SET category_id = ?
+                    WHERE name = 'Arkiv'
+                    ''', (category.id,))
+                    
+                    logger.info(f"Updated archive category to match the parent of archive-log: {category.name} (ID: {category.id})")
+                else:
+                    # Insert new archive category
+                    c.execute('''
+                    INSERT INTO categories (category_id, name, role_id)
+                    VALUES (?, ?, ?)
+                    ''', (category.id, "Arkiv", 0))
+                    
+                    logger.info(f"Set new archive category to match the parent of archive-log: {category.name} (ID: {category.id})")
+                
+                conn.commit()
+                
+                await interaction.followup.send(
+                    f"Arkiv-logg kanal er satt til '{kanal.name}'. "
+                    f"Foreldrekategorien '{category.name}' er nå registrert som arkiv-kategori.",
+                    ephemeral=True
+                )
+            else:
+                await interaction.followup.send(
+                    f"Arkiv-logg kanal er satt til '{kanal.name}'. "
+                    f"Foreldrekategorien '{category.name}' er allerede registrert som arkiv-kategori.",
+                    ephemeral=True
+                )
+        else:
+            await interaction.followup.send(
+                f"Arkiv-logg kanal er satt til '{kanal.name}'. "
+                f"Merk: Kanalen er ikke i en kategori. Det anbefales å flytte den til arkiv-kategorien.",
+                ephemeral=True
+            )
+        
+        conn.close()
+    
+    @app_commands.command(name="sett-saker-kategori", description="Setter en eksisterende kategori som saker-kategori")
+    @app_commands.describe(
+        kategori="Kategorien som skal settes som saker-kategori"
+    )
+    @app_commands.default_permissions(administrator=True)
+    async def set_cases_category(self, interaction: discord.Interaction, kategori: discord.CategoryChannel):
+        """
+        Sets an existing category as the cases category
+        
+        This command allows you to designate an existing category as the cases category,
+        which is used for storing open tickets.
+        
+        Args:
+            kategori: The category to set as the cases category
+        """
+        await interaction.response.defer(ephemeral=True)
+        
+        # Get connection to database
+        conn = self.get_db_connection()
+        c = conn.cursor()
+        
+        # Check if "Saker" category already exists in database
+        c.execute('''
+        SELECT * FROM categories WHERE name = 'Saker'
+        ''')
+        
+        existing_cases = c.fetchone()
+        
+        if existing_cases:
+            # Update existing cases category
+            c.execute('''
+            UPDATE categories
+            SET category_id = ?
+            WHERE name = 'Saker'
+            ''', (kategori.id,))
+            
+            logger.info(f"Updated cases category to {kategori.name} (ID: {kategori.id})")
+            action = "oppdatert"
+        else:
+            # Insert new cases category
+            c.execute('''
+            INSERT INTO categories (category_id, name, role_id)
+            VALUES (?, ?, ?)
+            ''', (kategori.id, "Saker", 0))
+            
+            logger.info(f"Set new cases category: {kategori.name} (ID: {kategori.id})")
+            action = "satt"
+        
+        conn.commit()
+        conn.close()
+        
+        await interaction.followup.send(
+            f"Saker-kategori er {action} til '{kategori.name}'.",
+            ephemeral=True
+        )
+
 async def setup(bot):
     await bot.add_cog(Setup(bot))
