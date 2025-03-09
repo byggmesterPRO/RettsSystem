@@ -106,6 +106,9 @@ class Tickets(commands.Cog):
         # Load existing ticket buttons from database
         self.load_ticket_views()
         
+        # Ensure ticket_buttons table exists
+        self.ensure_ticket_buttons_table()
+        
     def load_ticket_views(self):
         """Load existing ticket buttons from database"""
         try:
@@ -172,6 +175,32 @@ class Tickets(commands.Cog):
         except Exception as e:
             logger.error(f"Error loading ticket views: {e}")
             # Continue bot operation even if ticket views couldn't be loaded
+        
+    def ensure_ticket_buttons_table(self):
+        """Ensure the ticket_buttons table exists in the database"""
+        try:
+            conn = self.get_db_connection()
+            c = conn.cursor()
+            
+            # Create ticket_buttons table if it doesn't exist
+            c.execute('''
+            CREATE TABLE IF NOT EXISTS ticket_buttons (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                category_id INTEGER,
+                title TEXT,
+                description TEXT,
+                emoji TEXT,
+                button_text TEXT,
+                role_id INTEGER,
+                FOREIGN KEY (category_id) REFERENCES categories (category_id)
+            )
+            ''')
+            
+            conn.commit()
+            conn.close()
+            logger.info("Ensured ticket_buttons table exists")
+        except Exception as e:
+            logger.error(f"Error ensuring ticket_buttons table: {e}")
         
     def get_db_connection(self):
         """Get database connection"""
@@ -332,8 +361,28 @@ class Tickets(commands.Cog):
             VALUES (?, ?, ?)
             ''', (category.id, title, role_id))
         
-        # Store button information in a separate table or variable
-        # Since we can't store it in the categories table
+        # Store button information in the ticket_buttons table
+        c.execute('''
+        SELECT * FROM ticket_buttons WHERE category_id = ?
+        ''', (category.id,))
+        
+        existing_button = c.fetchone()
+        
+        if existing_button:
+            # Update existing button
+            c.execute('''
+            UPDATE ticket_buttons
+            SET title = ?, description = ?, emoji = ?, button_text = ?, role_id = ?
+            WHERE category_id = ?
+            ''', (title, description, button_emoji, button_text, role_id, category.id))
+            logger.info(f"Updated ticket button for category {category.id}")
+        else:
+            # Insert new button
+            c.execute('''
+            INSERT INTO ticket_buttons (category_id, title, description, emoji, button_text, role_id)
+            VALUES (?, ?, ?, ?, ?, ?)
+            ''', (category.id, title, description, button_emoji, button_text, role_id))
+            logger.info(f"Inserted new ticket button for category {category.id}")
         
         conn.commit()
         conn.close()
@@ -346,14 +395,15 @@ class Tickets(commands.Cog):
         )
         
         # Create view with button
-        view = discord.ui.View(timeout=None)
-        button = discord.ui.Button(
-            style=discord.ButtonStyle.primary,
-            label=button_text, 
-            emoji=button_emoji,
-            custom_id=f"ticket_button_{category.id}"
+        view = TicketView(
+            self.bot,
+            category.id,
+            title,
+            description,
+            button_emoji,
+            button_text,
+            role_id
         )
-        view.add_item(button)
         
         # Register the view with the bot for persistence
         self.bot.add_view(view)
