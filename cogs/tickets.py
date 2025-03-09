@@ -417,6 +417,9 @@ class Tickets(commands.Cog):
         # Archive channel (move to archive category)
         await interaction.channel.edit(category=archive_category)
         
+        # Sync permissions with the archive category
+        await interaction.channel.edit(sync_permissions=True)
+        
         # Disable sending messages for everyone
         await interaction.channel.set_permissions(interaction.guild.default_role, send_messages=False)
         
@@ -477,6 +480,9 @@ class Tickets(commands.Cog):
         
         # Archive channel (move to archive category)
         await interaction.channel.edit(category=archive_category)
+        
+        # Sync permissions with the archive category
+        await interaction.channel.edit(sync_permissions=True)
         
         # Send archive message
         embed = discord.Embed(
@@ -675,6 +681,9 @@ class Tickets(commands.Cog):
         try:
             # Move to archive category
             await interaction.channel.edit(category=archive_category)
+            
+            # Sync permissions with the archive category
+            await interaction.channel.edit(sync_permissions=True)
             
             # Disable sending messages for everyone
             await interaction.channel.set_permissions(interaction.guild.default_role, send_messages=False)
